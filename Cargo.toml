@@ -2,6 +2,7 @@
 name = "clap-i18n-richformatter"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
 
 [dependencies]
 i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-requester"]}
