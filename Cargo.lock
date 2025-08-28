@@ -106,7 +106,7 @@ dependencies = [
 
 [[package]]
 name = "clap-i18n-richformatter"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "clap",
  "i18n-embed",
