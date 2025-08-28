@@ -37,7 +37,7 @@ fn main() {
 
 ```
 
-3. run `LANG=zh_CN.UTF-8 cargo run -- -b` and `LANG=C cargo run -- -b`, will See:
+3. run `LANG=zh_CN.UTF-8 cargo run -- -b` and `LANG=C cargo run -- -b`, will see:
 
 ```
 错误: 未提供下列必要参数:
