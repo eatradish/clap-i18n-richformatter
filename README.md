@@ -6,7 +6,7 @@ Clap rich formatter with i18n!
 1. Add `clap-i18n-richformatter` to `Cargo.toml`:
 
 ```toml
-clap-i18n-richformatter = 0.1.0
+clap-i18n-richformatter = "0.1.0"
 ```
 
 2. Load:
