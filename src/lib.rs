@@ -471,7 +471,7 @@ fn put_usage(styled: &mut StyledStr, usage: &StyledStr) {
         &usage
             .ansi()
             .to_string()
-            .replace("Usage:", &fl!("clap-usage-heading")),
+            .replacen("Usage:", &fl!("clap-usage-heading"), 1),
     );
 }
 
