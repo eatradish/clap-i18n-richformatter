@@ -1,0 +1,15 @@
+[package]
+name = "clap-i18n-richformatter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-requester"]}
+i18n-embed-fl = "0.10"
+rust-embed = "8.5.0"
+unic-langid = "0.9.5"
+sys-locale = "0.3"
+clap = "4"
+
+[dev-dependencies]
+clap = { version = "4", features = ["derive"] }
