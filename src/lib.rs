@@ -90,7 +90,7 @@ impl ErrorFormatter for ClapI18nRichFormatter {
             for suggestion in suggestions {
                 let _ = write!(
                     styled,
-                    "\n{TAB}{valid}{}{valid:#} ",
+                    "\n{TAB}{valid}{}:{valid:#} ",
                     fl!("clap-tip-heading")
                 );
                 styled.push_str(&suggestion.ansi().to_string());

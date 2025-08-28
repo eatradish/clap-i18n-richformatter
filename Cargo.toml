@@ -6,7 +6,7 @@ license = "MIT"
 description = "Clap rich formatter with i18n support"
 
 [dependencies]
-i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-requester"]}
+i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-requester"] }
 i18n-embed-fl = "0.10"
 rust-embed = "8.5.0"
 unic-langid = "0.9.5"
