@@ -1,15 +1,16 @@
 # clap-i18n-richformatter
-Clap rich formatter with i18n!
 
-## Usage:
+i18n support for `clap::error::RichFormatter`!
 
-1. Add `clap-i18n-richformatter` to `Cargo.toml`:
+## Usage
+
+Add `clap-i18n-richformatter` to `Cargo.toml`:
 
 ```toml
 clap-i18n-richformatter = "0.1.0"
 ```
 
-2. Load:
+Initialise clap-i18n-richformatter as such:
 
 ```rust
 use clap::Parser;
@@ -37,7 +38,7 @@ fn main() {
 
 ```
 
-3. run `LANG=zh_CN.UTF-8 cargo run -- -b` and `LANG=C cargo run -- -b`, will see:
+Running `LANG=zh_CN.UTF-8 cargo run -- -b` and `LANG=C cargo run -- -b` will now show localised (and non-localised below) error output for Clap:
 
 ```
 错误: 未提供下列必要参数:
@@ -57,9 +58,16 @@ Usage: arg_requires --a --b
 For more information, try '--help'.
 ```
 
-## Other 
+## Contribution
 
-In https://github.com/clap-rs/clap/issues/380#issuecomment-1254059266:
+Your contribution are welcome via Pull Requests:
+
+- Code improvement (of course).
+- Localisation to other languages, see [i18n/](/i18n) for l10n metadata (in [Fluent](https://github.com/projectfluent/fluent-rs)).
+
+## Inspiration
+
+From https://github.com/clap-rs/clap/issues/380#issuecomment-1254059266:
 
 > In discussing this with someone on reddit, I think users can get something working, even if it isn't streamlined yet
 >
@@ -70,8 +78,6 @@ In https://github.com/clap-rs/clap/issues/380#issuecomment-1254059266:
 >   - If the help template has any hard coded strings, replace them with a localized version via `Command::help_template`
 >   - Fork clap::error::RichFormatter, replacing any hard coded strings with localized values. Use Error::apply to swap the formatter (e.g. use `Parser::try_parse` to get the error, call apply, and then `err.exit()`)
 
-About
+`clap-i18n-richformatter` follows the last suggesion from [@epage](https://github.com/epage) to implement i18n support for Clap errors, since the error messages are quite finite and predictable.
 
 > Fork clap::error::RichFormatter, replacing any hard coded strings with localized values. Use Error::apply to swap the formatter (e.g. use `Parser::try_parse` to get the error, call apply, and then `err.exit()`)
-
-You can use `clap-i18n-richformatter`.
