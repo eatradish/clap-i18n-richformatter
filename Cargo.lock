@@ -112,7 +112,6 @@ dependencies = [
  "i18n-embed",
  "i18n-embed-fl",
  "rust-embed",
- "sys-locale",
  "unic-langid",
 ]
 

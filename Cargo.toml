@@ -10,7 +10,6 @@ i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-request
 i18n-embed-fl = "0.10"
 rust-embed = "8.5.0"
 unic-langid = "0.9.5"
-sys-locale = "0.3"
 clap = "4"
 
 [dev-dependencies]
