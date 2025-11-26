@@ -7,7 +7,7 @@ i18n support for `clap::error::RichFormatter`!
 Add `clap-i18n-richformatter` to `Cargo.toml`:
 
 ```toml
-clap-i18n-richformatter = "0.1.0"
+clap-i18n-richformatter = { version = "0.3.0", features = ["derive"] }
 ```
 
 Initialise clap-i18n-richformatter as such:
