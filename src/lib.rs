@@ -1,5 +1,6 @@
 use std::error::Error;
 
+use clap::ArgMatches;
 use clap::builder::StyledStr;
 use clap::builder::Styles;
 use clap::builder::styling::Style;
@@ -41,6 +42,25 @@ pub fn init_clap_rich_formatter_localizer() {
     // This is a temporary workaround for https://github.com/microsoft/terminal/issues/16574
     // TODO: this might break BiDi text, though we don't support any writing system depends on that.
     CLAP_I18N_LANGUAGE_LOADER.set_use_isolating(false);
+}
+
+pub trait CommandI18nExt {
+    fn try_get_matches_i18n(self) -> Result<ArgMatches, clap::error::Error<ClapI18nRichFormatter>>;
+    fn get_matches_i18n(self) -> ArgMatches;
+}
+
+impl CommandI18nExt for clap::Command {
+    /// `clap::Command::try_get_matches` i18n version
+    fn try_get_matches_i18n(self) -> Result<ArgMatches, clap::error::Error<ClapI18nRichFormatter>> {
+        init_clap_rich_formatter_localizer();
+        self.try_get_matches()
+            .map_err(|e| e.apply::<ClapI18nRichFormatter>())
+    }
+
+    /// `clap::Command::get_matches` i18n version
+    fn get_matches_i18n(self) -> ArgMatches {
+        self.try_get_matches_i18n().map_err(|e| e.exit()).unwrap()
+    }
 }
 
 /// Richly formatted error context
