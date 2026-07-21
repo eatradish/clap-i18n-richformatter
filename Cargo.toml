@@ -7,7 +7,7 @@ description = "Clap rich formatter with i18n support"
 
 [dependencies]
 i18n-embed = { version = "0.16.0", features = ["fluent-system", "desktop-requester"] }
-i18n-embed-fl = "0.10"
+i18n-embed-fl = { version = "0.10", package = "i18n-embed-fl-no-check-hashmap-on-ra" }
 rust-embed = "8.5.0"
 unic-langid = "0.9.5"
 clap = "4"
